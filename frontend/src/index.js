@@ -6,13 +6,19 @@ import App from './App';
 import configureStore from './store';
 import './index.css';
 import { loadArticles } from './store/articleReducer';
+import * as articleActions from './store/articleReducer';
+// ...
 
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
-  window.loadArticles = loadArticles;
+  window.articleActions = articleActions;
 }
+// if (process.env.NODE_ENV !== 'production') {
+//   window.store = store;
+//   window.loadArticles = loadArticles;
+// }
 
 ReactDOM.render(
   <React.StrictMode>
